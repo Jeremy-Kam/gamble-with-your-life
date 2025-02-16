@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://d0k6ne3bynrx1"]
+[gd_scene load_steps=3 format=3 uid="uid://d0k6ne3bynrx1"]
+
+[ext_resource type="PackedScene" uid="uid://cu6nm8y84fvp0" path="res://scenes/player.tscn" id="1_yvprs"]
+[ext_resource type="PackedScene" uid="uid://bq73ls5a2683l" path="res://scenes/bullets/basic_enemy.tscn" id="2_ty4bm"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_yvprs")]
+
+[node name="Enemy" parent="." instance=ExtResource("2_ty4bm")]
