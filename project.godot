@@ -14,6 +14,16 @@ config/name="Gamble With Your Life"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[autoload]
+
+PlayerVariables="*res://scripts/player_variables.gd"
+GameManager="*res://scripts/game_manager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 up={
@@ -46,10 +56,17 @@ LMB={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Player Bullet"
+2d_physics/layer_4="Enemy Bullet"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/lossless_compression/force_png=true
-environment/defaults/default_clear_color=Color(0.0826777, 0.095199, 0.131795, 1)
+environment/defaults/default_clear_color=Color(0.169058, 0.18917, 0.247884, 1)

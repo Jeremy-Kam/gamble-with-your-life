@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62les"]
 size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ps1xl"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_037y6"]
+size = Vector2(18, 18)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 10
 script = ExtResource("1_doh8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,4 +22,9 @@ texture = ExtResource("2_6jt40")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ps1xl")
+shape = SubResource("RectangleShape2D_037y6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
