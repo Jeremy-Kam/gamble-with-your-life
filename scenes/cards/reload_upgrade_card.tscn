@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://vqqeskmfs1p"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_io6t8"]
+[ext_resource type="Texture2D" uid="uid://mlrw7m11ov4h" path="res://scenes/cards/ReloadUpCard-Sheet.png" id="2_ahppf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgepc"]
+atlas = ExtResource("2_ahppf")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo5vl"]
+atlas = ExtResource("2_ahppf")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcck6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgepc")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo5vl")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="ReloadUpgradeCard" instance=ExtResource("1_io6t8")]
+upgrade_stat = "reload"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_qcck6")

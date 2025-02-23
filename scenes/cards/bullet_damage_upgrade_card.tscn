@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://drbvb2aj66b8p"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_0s1pi"]
+[ext_resource type="Texture2D" uid="uid://dj6lot4enrw46" path="res://scenes/cards/BulletDamageUpCard-Sheet.png" id="2_h8a3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbf70"]
+atlas = ExtResource("2_h8a3q")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f1to"]
+atlas = ExtResource("2_h8a3q")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vc6lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbf70")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f1to")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="BulletDamageUpgradeCard" instance=ExtResource("1_0s1pi")]
+upgrade_stat = "bullet_damage"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_vc6lb")

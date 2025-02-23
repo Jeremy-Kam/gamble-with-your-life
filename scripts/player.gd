@@ -21,7 +21,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("LMB") && time_since_last_shot > (1.0/PlayerVariables.reload):
+	if Input.is_action_pressed("Fire") && time_since_last_shot > (1.0/PlayerVariables.reload):
 		time_since_last_shot = 0
 		fire()
 	else:
@@ -41,14 +41,12 @@ func fire():
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	
 func take_damage(damage_val):
-	print("ouch")
 	PlayerVariables.set_health(PlayerVariables.health - damage_val)
 	if PlayerVariables.health <= 0:
-		print("player died")
 		get_tree().reload_current_scene()
 	
 
 func _on_area_2d_body_entered(body):
-	if "Enemy" in body.name:
+	if body is Enemy:
 		body.take_damage(PlayerVariables.body_damage)
 		

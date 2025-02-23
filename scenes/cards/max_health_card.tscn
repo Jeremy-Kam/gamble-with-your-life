@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://detjhx5gxdq8b"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_un1c1"]
+[ext_resource type="Texture2D" uid="uid://o657fsw56j0w" path="res://scenes/cards/MaxHealthUpCard-Sheet.png" id="2_vsq6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq7aq"]
+atlas = ExtResource("2_vsq6o")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31bi7"]
+atlas = ExtResource("2_vsq6o")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2b3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq7aq")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31bi7")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="MaxHealthUpgradeCard" instance=ExtResource("1_un1c1")]
+upgrade_stat = "max_health"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_v2b3e")

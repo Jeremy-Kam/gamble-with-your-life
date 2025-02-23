@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds1kilawldtu5"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_ebcy4"]
+[ext_resource type="Texture2D" uid="uid://cl82cunlqiuab" path="res://scenes/cards/BulletPenetrationUpCard-Sheet.png" id="2_h2w3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsskx"]
+atlas = ExtResource("2_h2w3o")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjgm6"]
+atlas = ExtResource("2_h2w3o")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfnbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsskx")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjgm6")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="BulletPenetrationUpgradeCard" instance=ExtResource("1_ebcy4")]
+upgrade_stat = "bullet_penetration"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_xfnbl")

@@ -11,5 +11,7 @@ func _ready():
 func take_damage(damage_val):
 	health -= damage_val
 	if(health <= 0):
-		print("Enemy died")
 		queue_free()
+
+func get_type():
+	return "enemy"

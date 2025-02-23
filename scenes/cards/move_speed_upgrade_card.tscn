@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://0nsuxq2mkrmo"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_h0noc"]
+[ext_resource type="Texture2D" uid="uid://dr36jyo3km51c" path="res://scenes/cards/MovementSpeedUpCard-Sheet.png" id="2_eo147"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwmeo"]
+atlas = ExtResource("2_eo147")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyhvy"]
+atlas = ExtResource("2_eo147")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y63pw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwmeo")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyhvy")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="MoveSpeedUpgradeCard" instance=ExtResource("1_h0noc")]
+upgrade_stat = "move_speed"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_y63pw")
+animation = &"front"

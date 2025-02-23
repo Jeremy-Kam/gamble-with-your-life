@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct0x2cuo1rhat"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_yg0cw"]
+[ext_resource type="Texture2D" uid="uid://ckxkw007oo033" path="res://scenes/cards/BodyDamageUpCard-Sheet.png" id="2_ae56s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucuko"]
+atlas = ExtResource("2_ae56s")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d41e"]
+atlas = ExtResource("2_ae56s")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8u54d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucuko")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d41e")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="BodyDamageUpgradeCard" instance=ExtResource("1_yg0cw")]
+upgrade_stat = "body_damage"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_8u54d")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://biwoglb107jut"]
+
+[ext_resource type="PackedScene" uid="uid://cog2v3t3e13ca" path="res://scenes/cards/upgrade_card.tscn" id="1_5aegm"]
+[ext_resource type="Texture2D" uid="uid://bvw6a3f7111wr" path="res://scenes/cards/BulletSpeedUpCard-Sheet.png" id="2_ipj2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcen"]
+atlas = ExtResource("2_ipj2i")
+region = Rect2(24, 0, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_somhg"]
+atlas = ExtResource("2_ipj2i")
+region = Rect2(0, 0, 24, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awvab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcen")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_somhg")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}]
+
+[node name="BulletSpeedUpgradeCard" instance=ExtResource("1_5aegm")]
+upgrade_stat = "bullet_speed"
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_awvab")
