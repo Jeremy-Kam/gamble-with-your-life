@@ -17,7 +17,7 @@ func _on_timer_timeout():
 	# Once we run out of power level, stop spawning enemies. Once all enemies are gone from the scene, continue
 	if(cur_level_power <= 0):
 		if get_children_of_type("enemy").size() <= 0:
-			get_tree().reload_current_scene()
+			GameManager.switch_to_upgrade_menu()
 		else:
 			return
 	

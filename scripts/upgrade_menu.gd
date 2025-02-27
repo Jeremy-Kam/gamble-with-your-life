@@ -25,4 +25,4 @@ func _on_button_button_up():
 
 
 func _on_start_button_button_up():
-	pass # Replace with function body.
+	GameManager.switch_to_game()
